@@ -35,11 +35,13 @@ class Mantenimiento
         
             if ($this->CI->db->query($this->sql))
             {
-                  $this->CI->session->set_userdata("mensaje","Los registros se guardaron correctamente. ");
+                  $this->CI->session->set_userdata("mensaje",'<div class="infobox success-bg mrg10B"> <p>'."Los registros se guardaron correctamente. ".'</p></div>');
+                  return true;
             }
             else
             {
-                  $this->CI ->session->set_userdata("mensaje","Hubo un problema al momento de grabar. <br />intentelo y si persiste comunique a la area de sistema.");
+                  $this->CI ->session->set_userdata("mensaje",'<div class="infobox error-bg mrg0A mrg10B"><p>'."Hubo un problema al momento de grabar. <br />intentelo y si persiste comunique a la area de sistema.".'</p></div>');
+                  return false;
             }
         
     }
@@ -67,11 +69,13 @@ class Mantenimiento
 
             if ($this->CI->db->query($this->sql))
             {
-                  $this->CI->session->set_userdata("mensaje","Los registros se editaron correctamente.");
+                  $this->CI->session->set_userdata("mensaje",'<div class="infobox success-bg"> <p>'."Los registros se editaron correctamente.".'</p></div>');
+                  return true;
             }
             else
             {
-                  $this->CI->session->set_userdata("mensaje","Hubo un problema al momento de grabar. <br />intentelo y si persiste comunique a la area de sistema.");
+                  $this->CI->session->set_userdata("mensaje",'<div class="infobox error-bg mrg0A"><p>'."Hubo un problema al momento de grabar. <br />intentelo y si persiste comunique a la area de sistema.".'</p></div>');
+                  return false;
             }
         }
         
@@ -95,7 +99,8 @@ class Mantenimiento
              $this->CI->db->query("delete from $tabla where id=".addslashes($data));
          }
          
-         $this->CI->session->set_userdata("mensaje","Los registros se eliminaron correctamente.");
+         $this->CI->session->set_userdata("mensaje",'<div class="infobox success-bg"> <p>'."Los registros se eliminaron correctamente.".'</p></div>');
+         return true;
 
      }
 }
