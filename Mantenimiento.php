@@ -83,11 +83,19 @@ class Mantenimiento
      */
      function eliminar($data=NULL,$tabla=NULL)    
     { 
-         $this->CI = & get_instance(); 
-         foreach ($data as $item):
+         $this->CI = & get_instance();
+         if (is_array($data))
+         {
+           foreach ($data as $item):
              $this->CI->db->query("delete from $tabla where id=".addslashes($item));
-         endforeach;
-         $this->CI->session->set_userdata("mensaje","Los registros se eliminaron correctamente.");
+           endforeach;  
+         }
+         else
+         {
+             $this->CI->db->query("delete from $tabla where id=".addslashes($data));
+         }
+         
+         $this->CI->session->set_userdata("mensaje",'<div class="infobox success-bg"> <p>'."Los registros se eliminaron correctamente.".'</p></div>');
 
      }
 }
