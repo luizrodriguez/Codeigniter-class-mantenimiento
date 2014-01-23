@@ -95,7 +95,7 @@ class Mantenimiento
              $this->CI->db->query("delete from $tabla where id=".addslashes($data));
          }
          
-         $this->CI->session->set_userdata("mensaje",'<div class="infobox success-bg"> <p>'."Los registros se eliminaron correctamente.".'</p></div>');
+         $this->CI->session->set_userdata("mensaje","Los registros se eliminaron correctamente.");
 
      }
 }
