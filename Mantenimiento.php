@@ -35,11 +35,11 @@ class Mantenimiento
         
             if ($this->CI->db->query($this->sql))
             {
-                  $this->CI->session->set_userdata("mensaje",'<div class="infobox success-bg mrg10B"> <p>'."Los registros se guardaron correctamente. ".'</p></div>');
+                  $this->CI->session->set_userdata("mensaje","Los registros se guardaron correctamente. ");
             }
             else
             {
-                  $this->CI ->session->set_userdata("mensaje",'<div class="infobox error-bg mrg0A mrg10B"><p>'."Hubo un problema al momento de grabar. <br />intentelo y si persiste comunique a la area de sistema.".'</p></div>');
+                  $this->CI ->session->set_userdata("mensaje","Hubo un problema al momento de grabar. <br />intentelo y si persiste comunique a la area de sistema.");
             }
         
     }
@@ -67,11 +67,11 @@ class Mantenimiento
 
             if ($this->CI->db->query($this->sql))
             {
-                  $this->CI->session->set_userdata("mensaje",'<div class="infobox success-bg"> <p>'."Los registros se editaron correctamente.".'</p></div>');
+                  $this->CI->session->set_userdata("mensaje","Los registros se editaron correctamente.");
             }
             else
             {
-                  $this->CI->session->set_userdata("mensaje",'<div class="infobox error-bg mrg0A"><p>'."Hubo un problema al momento de grabar. <br />intentelo y si persiste comunique a la area de sistema.".'</p></div>');
+                  $this->CI->session->set_userdata("mensaje","Hubo un problema al momento de grabar. <br />intentelo y si persiste comunique a la area de sistema.");
             }
         }
         
@@ -87,7 +87,7 @@ class Mantenimiento
          foreach ($data as $item):
              $this->CI->db->query("delete from $tabla where id=".addslashes($item));
          endforeach;
-         $this->CI->session->set_userdata("mensaje",'<div class="infobox success-bg"> <p>'."Los registros se eliminaron correctamente.".'</p></div>');
+         $this->CI->session->set_userdata("mensaje","Los registros se eliminaron correctamente.");
 
      }
 }
