@@ -14,4 +14,4 @@ CodeIgniter 2.0.3
 Documentacion
 ==============================
 
-http://luisrodriguez.pe
+http://luisrodriguez.pe/blog/libreria-para-mantenimientos-crud-en-codeigniter/
